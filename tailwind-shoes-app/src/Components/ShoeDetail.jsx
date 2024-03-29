@@ -2,9 +2,11 @@ import nike1 from "../assets/n1-min.png";
 
 const ShoeDetail = () => {
   return (
-    <section className="flex flex-col space-y-4 lg:flex-row-reverse">
-      <div className="flex-1">
-        <img src={nike1} alt="Image of a shoe" />
+    <section className="flex flex-col space-x-4 lg:flex-row-reverse">
+      <div className="flex-1 lg:-mt-32 lg:ml-28">
+        <div className="flex-center h-full bg-gradient-to-br from-[#f637cf] from-5% via-[#e3d876] via-40% to-[#4dd4c6]">
+          <img src={nike1} alt="Image of a shoe" />
+        </div>
       </div>
       <div className="flex-1 space-y-6">
         <h1 className="text-5xl font-black md:text-9xl">Nike Air Max 270</h1>
