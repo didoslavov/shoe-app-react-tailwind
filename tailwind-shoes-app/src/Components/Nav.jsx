@@ -34,7 +34,7 @@ const Nav = () => {
         </ul>
       </div>
       <div className="fixed bottom-4 left-4 lg:static lg:mr-8">
-        <div className="flex-center h-12 w-12 cursor-pointer rounded-full bg-white shadow-md hover:bg-gray-100 active:bg-gray-200">
+        <div className="btn-press-animation flex-center h-12 w-12 cursor-pointer rounded-full bg-white shadow-md hover:bg-gray-100 active:bg-gray-200">
           <TbShoppingBag />
         </div>
       </div>

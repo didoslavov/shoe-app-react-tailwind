@@ -7,7 +7,7 @@ const ShoeDetail = () => {
     <section className="flex flex-col space-x-4 lg:flex-row-reverse">
       <div className="flex-1 lg:-mt-32 lg:ml-28">
         <div className="flex-center h-full bg-gradient-to-br from-[#f637cf] from-5% via-[#e3d876] via-40% to-[#4dd4c6]">
-          <img src={nike1} alt="Image of a shoe" />
+          <img src={nike1} alt="Image of a shoe" className="animate-float" />
         </div>
       </div>
       <div className="flex-1 space-y-6">
@@ -23,7 +23,7 @@ const ShoeDetail = () => {
           <Select title={"SIZE"} options={SIZES} />
         </div>
         <div className="space-x-10">
-          <button className="h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
+          <button className="btn-press-animation h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
             Add to bag
           </button>
           <a
