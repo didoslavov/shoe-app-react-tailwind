@@ -16,11 +16,11 @@ const CartItem = ({ item }) => {
         <div className="flex space-x-6">
           <div className="font-bold">
             <span>Size</span>
-            <Select title="" options={SIZES} />
+            <Select title="" options={SIZES} className={"w-16 p-1"} />
           </div>
           <div className="font-bold">
             <span>Qty</span>
-            <Select title="" options={QTY} />
+            <Select title="" options={QTY} className={"w-16 p-1"} />
           </div>
         </div>
         <button>
