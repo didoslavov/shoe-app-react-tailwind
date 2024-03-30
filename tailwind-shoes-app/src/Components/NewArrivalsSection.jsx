@@ -1,6 +1,6 @@
 import Card from "./Card.jsx";
 
-function NewArrivalsSection({ items }) {
+function NewArrivalsSection({ items, onClickCard }) {
   return (
     <div className="mt-20">
       <div className="flex-center">
@@ -10,7 +10,7 @@ function NewArrivalsSection({ items }) {
       </div>
       <div className="mt-10 grid grid-cols-1 justify-between gap-x-6 gap-y-24 md:grid-cols-2 xl:grid-cols-[repeat(3,25%)]">
         {items.map((i) => (
-          <Card key={i.id} item={i} />
+          <Card key={i.id} item={i} onClickCard={onClickCard} />
         ))}
       </div>
     </div>
