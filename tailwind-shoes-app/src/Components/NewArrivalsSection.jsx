@@ -4,7 +4,7 @@ function NewArrivalsSection({ items }) {
   return (
     <div className="mt-20">
       <div className="flex-center">
-        <h2 className=" bg-[url('./assets/lines.png')] bg-center text-4xl font-extrabold">
+        <h2 className=" bg-[url('./assets/lines.png')] bg-center text-4xl font-extrabold dark:text-white">
           NEW ARRIVALS
         </h2>
       </div>

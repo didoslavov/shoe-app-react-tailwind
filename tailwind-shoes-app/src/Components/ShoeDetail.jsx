@@ -4,7 +4,7 @@ import Select from "./Select.jsx";
 
 const ShoeDetail = () => {
   return (
-    <section className="flex flex-col space-x-4 lg:flex-row-reverse">
+    <section className="flex flex-col space-x-4 lg:flex-row-reverse dark:text-white">
       <div className="flex-1 lg:-mt-32 lg:ml-28">
         <div className="flex-center h-full bg-gradient-to-br from-[#f637cf] from-5% via-[#e3d876] via-40% to-[#4dd4c6]">
           <img src={nike1} alt="Image of a shoe" className="animate-float" />

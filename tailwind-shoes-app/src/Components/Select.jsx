@@ -3,7 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const Select = ({ title, options, className, defaultValue }) => {
   console.log(defaultValue);
   return (
-    <div className="relative">
+    <div className="relative dark:text-black">
       <select
         defaultValue={defaultValue || ""}
         className={`appearance-none border border-gray-300 bg-white ${className}`}

@@ -11,18 +11,18 @@ const Nav = ({ onClickShoppingBtn }) => {
   return (
     <nav className="relative z-10 flex flex-wrap items-center justify-between">
       <a href="#">
-        <NikeLogo className="h-20 w-20" />
+        <NikeLogo className="h-20 w-20 dark:fill-white" />
       </a>
       <button
         onClick={() => setIsMobileShown(!isMobileShown)}
-        className="rounded-lg p-2 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 lg:hidden"
+        className="rounded-lg p-2 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 lg:hidden dark:text-gray-400 dark:hover:bg-gray-700"
       >
         <RxHamburgerMenu size={25} />
       </button>
       <div
         className={`${!isMobileShown && "hidden"} w-full lg:block lg:w-auto`}
       >
-        <ul className="flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg lg:flex-row lg:space-x-8 lg:border-none lg:bg-transparent">
+        <ul className="flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg lg:flex-row lg:space-x-8 lg:border-none lg:bg-transparent lg:dark:text-white">
           {ROUTES.map((r, i) => (
             <li
               key={i}
