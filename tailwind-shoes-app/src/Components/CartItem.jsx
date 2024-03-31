@@ -1,7 +1,7 @@
 import { CiTrash } from "react-icons/ci";
 import Select from "./Select.jsx";
 import { QTY, SIZES } from "../contants.js";
-const CartItem = ({ item: { product, qty, size } }) => {
+const CartItem = ({ item: { product, qty, size }, onRemoveItem }) => {
   return (
     <div className="cursor-pointer space-y-2 bg-gray-50 p-2 hover:bg-[#DAFFA2]">
       <figure className="flex space-x-2">
@@ -17,7 +17,7 @@ const CartItem = ({ item: { product, qty, size } }) => {
           <div className="font-bold">
             <span>Size</span>
             <Select
-              defaultValue={size}
+              value={size}
               title=""
               options={SIZES}
               className={"w-16 p-1 pl-2"}
@@ -26,14 +26,14 @@ const CartItem = ({ item: { product, qty, size } }) => {
           <div className="font-bold">
             <span>Qty</span>
             <Select
-              defaultValue={qty}
+              value={qty}
               title=""
               options={QTY}
               className={"w-16 p-1 pl-2"}
             />
           </div>
         </div>
-        <button>
+        <button onClick={() => onRemoveItem(product.id)}>
           <CiTrash size={25} className="text-black" />
         </button>
       </div>

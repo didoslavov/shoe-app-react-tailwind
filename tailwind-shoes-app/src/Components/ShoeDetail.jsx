@@ -1,8 +1,11 @@
 // import nike1 from "../assets/n1-min.png";
+import { useState } from "react";
 import { QTY, SIZES } from "../contants.js";
 import Select from "./Select.jsx";
 
-const ShoeDetail = ({ shoe }) => {
+const ShoeDetail = ({ shoe, onClickAdd }) => {
+  const [form, setForm] = useState({ qty: null, size: null });
+
   return (
     <section className="flex flex-col space-x-4 lg:flex-row-reverse dark:text-white">
       <div className="flex-1 lg:-mt-32 lg:ml-28">
@@ -17,11 +20,26 @@ const ShoeDetail = ({ shoe }) => {
           <div className="text-3xl font-extrabold md:text-6xl">
             {shoe.price}$
           </div>
-          <Select title={"QTY"} options={QTY} className={"w-24 p-4"} />
-          <Select title={"SIZE"} options={SIZES} className={"w-24 p-4"} />
+          <Select
+            value={form.qty}
+            onChange={(qty) => setForm({ ...form, qty })}
+            title={"QTY"}
+            options={QTY}
+            className={"w-24 p-4"}
+          />
+          <Select
+            value={form.size}
+            onChange={(size) => setForm({ ...form, size })}
+            title={"SIZE"}
+            options={SIZES}
+            className={"w-24 p-4"}
+          />
         </div>
         <div className="space-x-10">
-          <button className="btn-press-animation h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
+          <button
+            onClick={() => onClickAdd(shoe, form.qty, form.size)}
+            className="btn-press-animation h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700"
+          >
             Add to bag
           </button>
           <a

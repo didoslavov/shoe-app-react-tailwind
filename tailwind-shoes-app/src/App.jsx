@@ -8,15 +8,10 @@ import Sidebar from "./Components/Sidebar.jsx";
 import { SHOE_LIST } from "./contants.js";
 import Cart from "./Components/Cart.jsx";
 
-const FAKE_CART_ITEMS = SHOE_LIST.map((s) => ({
-  product: s,
-  qty: 1,
-  size: 44,
-}));
-
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem("isDarkMode");
@@ -35,16 +30,42 @@ function App() {
     );
   };
 
+  const addToCart = (product, qty, size) => {
+    if (qty && size) {
+      const updatedCartItems = [...cartItems];
+      const existingItem = cartItems.findIndex(
+        (i) => i.product.id === product.id,
+      );
+
+      if (existingItem !== -1) {
+        updatedCartItems[existingItem].qty = qty;
+        updatedCartItems[existingItem].size = size;
+      } else {
+        updatedCartItems.push({ product, qty, size });
+      }
+
+      setCartItems(updatedCartItems);
+    }
+  };
+
+  const removeFromCart = (productId) => {
+    const updatedCartItems = [...cartItems];
+    const existingItem = cartItems.findIndex((i) => i.product.id === productId);
+
+    updatedCartItems.splice(existingItem, 1);
+    setCartItems(updatedCartItems);
+  };
+
   return (
     <div className="animate-fadeIn dark:bg-night p-10 xl:px-24">
       <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
-      <ShoeDetail shoe={currentShoe} />
+      <ShoeDetail shoe={currentShoe} onClickAdd={addToCart} />
       <NewArrivalsSection items={SHOE_LIST} onClickCard={setCurrentShoe} />
       <Sidebar
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        <Cart cartItems={FAKE_CART_ITEMS} />
+        <Cart cartItems={cartItems} onRemoveItem={removeFromCart} />
       </Sidebar>
       <div className="fixed bottom-4 right-4">
         <button

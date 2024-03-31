@@ -1,11 +1,11 @@
 import { IoIosArrowDown } from "react-icons/io";
 
-const Select = ({ title, options, className, defaultValue }) => {
-  console.log(defaultValue);
+const Select = ({ title, options, className, value, onChange }) => {
   return (
     <div className="relative dark:text-black">
       <select
-        defaultValue={defaultValue || ""}
+        onChange={(e) => onChange(e.target.value)}
+        value={value || ""}
         className={`appearance-none border border-gray-300 bg-white ${className}`}
       >
         <option disabled hidden value="">
